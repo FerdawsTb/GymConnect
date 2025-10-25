@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GymConnectApplication</string>
+    <string name="welcome_message">Welcome to Gym Connect</string>
+    <string name="subscription_status">My Subscription</string>
+    <string name="title">Gym Connect</string>
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
+    <string name="noaccount">No Account!</string>
+    <string name="admin">Admin</string>
+    <string name="my_coaches">My Coaches</string>
+</resources>
