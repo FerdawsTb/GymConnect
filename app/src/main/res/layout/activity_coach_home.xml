@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Image de fond -->
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="match_parent"
@@ -17,7 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg2" />
 
-    <!-- Overlay semi-transparent -->
     <View
         android:id="@+id/overlay"
         android:layout_width="match_parent"
@@ -28,7 +26,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Header avec icônes -->
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="40dp"
@@ -75,7 +72,6 @@
         app:srcCompat="@drawable/outline_account_circle_24"
         app:tint="#FFFFFF" />
 
-    <!-- Badge Coach -->
     <TextView
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
@@ -96,7 +92,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView22" />
 
-    <!-- Section Today -->
     <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
@@ -125,7 +120,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView26" />
 
-    <!-- Activity Grid: 3 colonnes -->
     <LinearLayout
         android:id="@+id/activityGrid"
         android:layout_width="0dp"
@@ -139,7 +133,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/decorativeLine">
 
-        <!-- Sessions Today -->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -178,7 +171,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Next Class Members -->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -227,7 +219,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Work Hours -->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -277,7 +268,6 @@
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
-    <!-- Date d'aujourd'hui -->
     <TextView
         android:id="@+id/textViewDate"
         android:layout_width="wrap_content"
@@ -296,7 +286,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activityGrid" />
 
-    <!-- Section Courses -->
     <TextView
         android:id="@+id/textViewCourses"
         android:layout_width="wrap_content"
@@ -325,7 +314,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewCourses" />
 
-    <!-- Liste des Cours -->
     <ScrollView
         android:id="@+id/coursesScrollView"
         android:layout_width="0dp"
@@ -344,7 +332,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Cours 1 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -408,7 +395,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Cours 2 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -472,7 +458,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Cours 3 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -539,7 +524,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Boutons Navigation -->
     <LinearLayout
         android:id="@+id/navigationButtons"
         android:layout_width="0dp"
