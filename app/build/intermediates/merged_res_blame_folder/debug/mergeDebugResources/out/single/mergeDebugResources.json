@@ -1,0 +1,186 @@
+[
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_fragment_login.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_login.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_admin_home.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_admin_home.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_coach_home.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_coach_home.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_fragment_home.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/drawable_bg2.jpg.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/drawable/bg2.jpg"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_reserver_cours.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_reserver_cours.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/drawable_outline_account_circle_24.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/drawable/outline_account_circle_24.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/navigation_nav_graph.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-hdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/drawable_gym_background.jpg.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/drawable/gym_background.jpg"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/font_adlam_display.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/font/adlam_display.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_signin.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_signin.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_fragment_signup.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/fragment_signup.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_sign_up.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_sign_up.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_client_home.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_client_home.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_signup.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_signup.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_gerer_cours.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_gerer_cours.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/drawable_outline_align_horizontal_left_24.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/drawable/outline_align_horizontal_left_24.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/font_aclonica.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/font/aclonica.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/drawable_red_black_and_white_modern_gym_fitness_instagram_post.png.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/drawable/red_black_and_white_modern_gym_fitness_instagram_post.png"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/font_anton.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/font/anton.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_home.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/xml_backup_rules.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/font_bakbak_one.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/font/bakbak_one.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/drawable_black___pink_minimalist_fitness_promotion_gym_fitness_instagram_post.png.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/drawable/black___pink_minimalist_fitness_promotion_gym_fitness_instagram_post.png"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/layout_activity_main.xml.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-xhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.gymconnectapplication.app-debug-52:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.gymconnectapplication.app-main-54:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    }
+]
