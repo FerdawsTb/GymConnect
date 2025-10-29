@@ -8,4 +8,6 @@
     <string name="noaccount">No Account!</string>
     <string name="admin">Admin</string>
     <string name="my_coaches">My Coaches</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
