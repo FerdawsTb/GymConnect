@@ -21,6 +21,7 @@
         <item>@font/bakbak_one</item>
     </array>
     <color name="black">#FF000000</color>
+    <color name="orange">#FF5722</color>
     <color name="white">#FFFFFFFF</color>
     <string name="admin">Admin</string>
     <string name="app_name">GymConnectApplication</string>
