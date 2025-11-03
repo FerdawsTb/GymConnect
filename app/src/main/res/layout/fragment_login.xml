@@ -143,11 +143,14 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginBottom="184dp"
-        android:text="No Account !"
-        android:textColor="#FFFFFF"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="180dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="No Account ? Sign Up"
+        android:textColor="#4FC3F7"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

@@ -26,8 +26,10 @@
         android:background="#60000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView3"
@@ -142,12 +144,15 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginBottom="196dp"
-        android:text="No Account !"
-        android:textColor="#FFFFFF"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="180dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="No Account ? Sign Up"
+        android:textColor="#4FC3F7"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

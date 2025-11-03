@@ -44,7 +44,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NOS OFFRES"
+                android:text="OUR OFFRES"
                 android:textColor="#FF6B35"
                 android:textSize="28sp"
                 android:textStyle="bold" />
