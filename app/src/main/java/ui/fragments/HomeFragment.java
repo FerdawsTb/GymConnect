@@ -13,7 +13,6 @@ import com.example.gymconnectapplication.R;
 public class HomeFragment extends Fragment {
 
     public HomeFragment() {
-        // Constructeur vide requis
     }
 
     @Override
@@ -21,16 +20,15 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        Button btnLogin = view.findViewById(R.id.button2); // bouton "Sign In"
-        Button btnSignUp = view.findViewById(R.id.button); // bouton "Sign Up"
+        Button btnLogin = view.findViewById(R.id.button2);
+        Button btnSignUp = view.findViewById(R.id.button);
 
-        // ✅ Navigation vers LoginFragment
+        // Navigation vers LoginFragment
         btnLogin.setOnClickListener(v -> {
             NavController navController = Navigation.findNavController(v);
             navController.navigate(R.id.action_home_to_signin);
         });
-
-        // ✅ Navigation vers SignupFragment
+        // Navigation vers SignupFragment
         btnSignUp.setOnClickListener(v -> {
             NavController navController = Navigation.findNavController(v);
             navController.navigate(R.id.action_home_to_signup);
