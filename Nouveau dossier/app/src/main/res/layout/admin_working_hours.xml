@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gym_background"
+        android:contentDescription="Fond d'écran d'une salle de sport" />
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_overlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_circle_button"
+        android:padding="12dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#FFFFFF"
+        android:contentDescription="Bouton retour" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/adlam_display"
+        android:gravity="center"
+        android:text="Horaires de la Salle"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- CardView pour la Période de Validité -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="#DD000000"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="🗓️ Période de Validité"
+                        android:textColor="#FF5722"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="Définissez une plage de dates pour ces horaires (optionnel)."
+                        android:textColor="#BBBBBB"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Date de début"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="date"
+                                android:focusable="false"
+                                android:clickable="true"
+                                android:text="01/06/2024"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Date de fin"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextEndDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="date"
+                                android:focusable="false"
+                                android:clickable="true"
+                                android:text="31/08/2024"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="📅 Horaires d'Ouverture / Fermeture"
+                android:textColor="#FF5722"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#DD000000"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Lundi -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="#22FFFFFF"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Lundi"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:hint="Ouverture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextMondayOpen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="06:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:hint="Fermeture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextMondayClose"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="22:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkboxMonday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:checked="true"
+                            app:buttonTint="#4CAF50" />
+
+                    </LinearLayout>
+
+                    <!-- Mardi -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="#22FFFFFF"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Mardi"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:hint="Ouverture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextTuesdayOpen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="06:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:hint="Fermeture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextTuesdayClose"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="22:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkboxTuesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:checked="true"
+                            app:buttonTint="#4CAF50" />
+
+                    </LinearLayout>
+
+                    <!-- Mercredi -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="#22FFFFFF"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Mercredi"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:hint="Ouverture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextWednesdayOpen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="06:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:hint="Fermeture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextWednesdayClose"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="22:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkboxWednesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:checked="true"
+                            app:buttonTint="#4CAF50" />
+
+                    </LinearLayout>
+
+                    <!-- Jeudi -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="#22FFFFFF"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Jeudi"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:hint="Ouverture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextThursdayOpen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="06:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:hint="Fermeture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextThursdayClose"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="22:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkboxThursday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:checked="true"
+                            app:buttonTint="#4CAF50" />
+
+                    </LinearLayout>
+
+                    <!-- Vendredi -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="#22FFFFFF"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Vendredi"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:hint="Ouverture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextFridayOpen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="06:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:hint="Fermeture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextFridayClose"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="22:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkboxFriday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:checked="true"
+                            app:buttonTint="#4CAF50" />
+
+                    </LinearLayout>
+
+                    <!-- Samedi -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="#22FFFFFF"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Samedi"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:hint="Ouverture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextSaturdayOpen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="08:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:hint="Fermeture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextSaturdayClose"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="20:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkboxSaturday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:checked="true"
+                            app:buttonTint="#4CAF50" />
+
+                    </LinearLayout>
+
+                    <!-- Dimanche -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFFFFF"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Dimanche"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:hint="Ouverture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextSundayOpen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="09:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:hint="Fermeture"
+                            android:textColorHint="#999999"
+                            app:boxBackgroundColor="#33FFFFFF"
+                            app:boxStrokeColor="#FF5722"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:hintTextColor="#FF5722">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextSundayClose"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="time"
+                                android:text="18:00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkboxSunday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:checked="true"
+                            app:buttonTint="#4CAF50" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveChanges"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:text="Enregistrer les Modifications"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="#FF5722"
+                app:cornerRadius="12dp"
+                app:rippleColor="#FFFFFF" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

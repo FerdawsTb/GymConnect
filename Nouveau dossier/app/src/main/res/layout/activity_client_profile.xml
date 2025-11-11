@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- Fond et Overlay -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg2"
+        android:contentDescription="Background Image" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A0000000" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+            <!-- Barre de titre -->
+
+            <!-- Carte principale d'information du client -->
+
+            <TextView
+                android:id="@+id/profileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="140dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Client Profile"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="31dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/profileInfoCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#2C2C2C"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="88dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <!-- Image du client (circulaire) -->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/clientImageView"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                        app:strokeColor="@color/orange"
+                        app:strokeWidth="2dp"
+                        tools:src="@drawable/default_profile_pic" />
+
+                    <TextView
+                        android:id="@+id/clientName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/clientImageView"
+                        app:layout_constraintTop_toTopOf="@id/clientImageView"
+                        tools:text="John Doe" />
+
+                    <TextView
+                        android:id="@+id/clientEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#BDBDBD"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/clientName"
+                        app:layout_constraintTop_toBottomOf="@id/clientName"
+                        tools:text="john.doe@example.com" />
+
+                    <TextView
+                        android:id="@+id/clientJoinDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#BDBDBD"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/clientName"
+                        app:layout_constraintTop_toBottomOf="@id/clientEmail"
+                        tools:text="Member since: 2023-01-15" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Carte de l'objectif (Goal) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/goalCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#2C2C2C"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintStart_toStartOf="@id/profileInfoCard"
+                app:layout_constraintEnd_toEndOf="@id/profileInfoCard"
+                app:layout_constraintTop_toBottomOf="@id/profileInfoCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Current Goal"
+                        android:textColor="@color/orange"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/goalDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        tools:text="Build muscle and increase strength" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- Section pour l'abonnement ACTIF -->
+            <!-- NOTE: Mettre la visibilité à 'gone' par défaut, et la rendre 'visible' via le code si un abonnement existe -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/activeSubscriptionCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#2C2C2C"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintStart_toStartOf="@id/profileInfoCard"
+                app:layout_constraintEnd_toEndOf="@id/profileInfoCard"
+                app:layout_constraintTop_toBottomOf="@id/goalCard"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Active Subscription"
+                        android:textColor="@color/orange"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/subscriptionStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="#4CAF50"
+                        android:textStyle="bold"
+                        tools:text="Status: Active" />
+
+                    <TextView
+                        android:id="@+id/subscriptionEndDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@android:color/white"
+                        tools:text="Expires on: 31/12/2024" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section si AUCUN abonnement -->
+            <!-- NOTE: Mettre la visibilité à 'visible' par défaut, et la rendre 'gone' via le code si un abonnement existe -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/noSubscriptionCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#4A2C2C"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintStart_toStartOf="@id/profileInfoCard"
+                app:layout_constraintEnd_toEndOf="@id/profileInfoCard"
+                app:layout_constraintTop_toBottomOf="@id/activeSubscriptionCard"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Active Subscription"
+                        android:textColor="#FF8A80"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/subscribeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Subscribe Now"
+                        app:backgroundTint="@color/orange"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- Carte de l'historique des abonnements -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/historyCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#2C2C2C"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintStart_toStartOf="@id/profileInfoCard"
+                app:layout_constraintEnd_toEndOf="@id/profileInfoCard"
+                app:layout_constraintTop_toBottomOf="@id/noSubscriptionCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subscription History"
+                        android:textColor="@color/orange"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- RecyclerView pour afficher la liste des abonnements passés -->
+
+                    <!-- Message à afficher si l'historique est vide -->
+                    <TextView
+                        android:id="@+id/noHistoryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="No past subscriptions."
+                        android:textColor="#BDBDBD"
+                        android:visibility="gone"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
