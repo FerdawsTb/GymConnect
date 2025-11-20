@@ -1,15 +1,17 @@
 package com.example.gymconnectapplication;
 
 import android.os.Bundle;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-import ui.fragments.HomeFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class ClientProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        //EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_client_profile);
     }
 }

@@ -18,11 +18,40 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ClientProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminGererAbonnementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AjouterAbonnementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AjouterCoursActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AjouterHeureTravailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoachHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GererCoursActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GererPresenceCoachActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReserverCoursAvtivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

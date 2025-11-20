@@ -419,7 +419,8 @@
                 android:textColor="#2196F3"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:cornerRadius="12dp" />
+                app:cornerRadius="12dp"
+                android:onClick="goToSignIn" />
 
             <Button
                 android:id="@+id/signUpButton"
@@ -432,7 +433,8 @@
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:cornerRadius="12dp" />
+                app:cornerRadius="12dp"
+                android:onClick="goToSignUp" />
         </LinearLayout>
     </LinearLayout>
 
