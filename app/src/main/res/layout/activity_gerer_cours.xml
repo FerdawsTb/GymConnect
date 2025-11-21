@@ -40,32 +40,25 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Back"
-            android:src="@android:drawable/ic_menu_revert"
-            app:tint="#FFFFFF" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="MANAGE COURSES"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageButton
             android:id="@+id/menuButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Menu"
             android:src="@android:drawable/ic_menu_sort_by_size"
-            app:tint="#FFFFFF" />
+            app:tint="#FFFFFF"
+            android:onClick="openDrawer"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="GÉRER LES COURS"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
     <ScrollView
@@ -109,7 +102,7 @@
                 android:elevation="4dp"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
-                android:text="ADD NEW COURSE"
+                android:text="AJOUTER UN COURS"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -122,7 +115,7 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="3"
-                android:text="MY COURSES"
+                android:text="MES COURS"
                 android:textColor="#FF6B35"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -156,7 +149,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Morning Yoga"
+                                android:text="Yoga Matinal"
                                 android:textColor="#FFFFFF"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
@@ -165,7 +158,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Monday, Wednesday, Friday"
+                                android:text="Lundi, Mercredi, Vendredi"
                                 android:textColor="#B0B0B0"
                                 android:textSize="12sp" />
 
@@ -173,7 +166,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
-                                android:text="7:00 AM - 8:00 AM"
+                                android:text="7:00 - 8:00"
                                 android:textColor="#2196F3"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -187,7 +180,7 @@
                             android:paddingTop="4dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="4dp"
-                            android:text="Active"
+                            android:text="Actif"
                             android:textColor="#FFFFFF"
                             android:textSize="11sp"
                             android:textStyle="bold" />
@@ -214,7 +207,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
                             android:layout_marginEnd="8dp"
-                            android:text="EDIT"
+                            android:text="MODIFIER"
                             android:textColor="#2196F3"
                             android:textSize="12sp"
                             app:strokeColor="#2196F3" />
@@ -224,7 +217,7 @@
                             style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:text="DELETE"
+                            android:text="SUPPRIMER"
                             android:textColor="#F44336"
                             android:textSize="12sp"
                             app:strokeColor="#F44336" />
@@ -261,7 +254,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="CrossFit Intensive"
+                                android:text="CrossFit Intensif"
                                 android:textColor="#FFFFFF"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
@@ -270,7 +263,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Tuesday, Thursday, Saturday"
+                                android:text="Mardi, Jeudi, Samedi"
                                 android:textColor="#B0B0B0"
                                 android:textSize="12sp" />
 
@@ -278,7 +271,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
-                                android:text="6:00 PM - 7:30 PM"
+                                android:text="18:00 - 19:30"
                                 android:textColor="#2196F3"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -292,7 +285,7 @@
                             android:paddingTop="4dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="4dp"
-                            android:text="Active"
+                            android:text="Actif"
                             android:textColor="#FFFFFF"
                             android:textSize="11sp"
                             android:textStyle="bold" />
@@ -320,7 +313,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
                             android:layout_marginEnd="8dp"
-                            android:text="EDIT"
+                            android:text="MODIFIER"
                             android:textColor="#2196F3"
                             android:textSize="12sp"
                             app:strokeColor="#2196F3" />
@@ -330,7 +323,7 @@
                             style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:text="DELETE"
+                            android:text="SUPPRIMER"
                             android:textColor="#F44336"
                             android:textSize="12sp"
                             app:strokeColor="#F44336" />
@@ -367,7 +360,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Spinning Class"
+                                android:text="Cours de Spinning"
                                 android:textColor="#FFFFFF"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
@@ -376,7 +369,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Wednesday, Friday"
+                                android:text="Mercredi, Vendredi"
                                 android:textColor="#B0B0B0"
                                 android:textSize="12sp" />
 
@@ -384,7 +377,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
-                                android:text="5:30 PM - 6:30 PM"
+                                android:text="17:30 - 18:30"
                                 android:textColor="#2196F3"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -398,7 +391,7 @@
                             android:paddingTop="4dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="4dp"
-                            android:text="Inactive"
+                            android:text="Inactif"
                             android:textColor="#FFFFFF"
                             android:textSize="11sp"
                             android:textStyle="bold" />
@@ -425,7 +418,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
                             android:layout_marginEnd="8dp"
-                            android:text="EDIT"
+                            android:text="MODIFIER"
                             android:textColor="#2196F3"
                             android:textSize="12sp"
                             app:strokeColor="#2196F3" />
@@ -435,7 +428,7 @@
                             style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:text="DELETE"
+                            android:text="SUPPRIMER"
                             android:textColor="#F44336"
                             android:textSize="12sp"
                             app:strokeColor="#F44336" />
@@ -473,7 +466,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Boxing Fundamentals"
+                                android:text="Boxe Fondamentaux"
                                 android:textColor="#FFFFFF"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
@@ -482,7 +475,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Monday, Thursday"
+                                android:text="Lundi, Jeudi"
                                 android:textColor="#B0B0B0"
                                 android:textSize="12sp" />
 
@@ -490,7 +483,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
-                                android:text="7:00 PM - 8:30 PM"
+                                android:text="19:00 - 20:30"
                                 android:textColor="#2196F3"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -504,7 +497,7 @@
                             android:paddingTop="4dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="4dp"
-                            android:text="Active"
+                            android:text="Actif"
                             android:textColor="#FFFFFF"
                             android:textSize="11sp"
                             android:textStyle="bold" />
@@ -531,7 +524,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
                             android:layout_marginEnd="8dp"
-                            android:text="EDIT"
+                            android:text="MODIFIER"
                             android:textColor="#2196F3"
                             android:textSize="12sp"
                             app:strokeColor="#2196F3" />
@@ -541,7 +534,7 @@
                             style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:text="DELETE"
+                            android:text="SUPPRIMER"
                             android:textColor="#F44336"
                             android:textSize="12sp"
                             app:strokeColor="#F44336" />

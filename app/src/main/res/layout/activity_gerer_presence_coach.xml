@@ -7,7 +7,6 @@
     android:background="#121212"
     tools:context=".SecretaryCoachAttendanceActivity">
 
-    <!-- Arrière-plan et superposition -->
     <ImageView
         android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
@@ -21,7 +20,6 @@
         android:layout_height="match_parent"
         android:background="#C2000000" />
 
-    <!-- Barre supérieure -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -34,13 +32,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/backButton"
+            android:id="@+id/menuButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_revert"
+            android:src="@android:drawable/ic_menu_sort_by_size"
             app:tint="#FFFFFF"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription"
+            android:onClick="openDrawer"/>
 
         <TextView
             android:layout_width="0dp"
@@ -52,12 +51,6 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:visibility="invisible"
-            tools:ignore="ContentDescription" />
     </LinearLayout>
 
     <ScrollView
@@ -72,7 +65,6 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Section d'identification améliorée -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,7 +86,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="ferdawes teyeb"
+                        android:text="Ferdawes Teyeb"
                         android:textColor="#FFFFFF"
                         android:textSize="22sp"
                         android:textStyle="bold"/>
@@ -113,7 +105,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Titre de la liste -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -123,7 +114,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <!-- EXEMPLE DE COACH 1 (État par défaut / Absent) -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/coachCard1"
                 android:layout_width="match_parent"
@@ -166,7 +156,7 @@
                             android:id="@+id/coachName1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="cristiano farhat"
+                            android:text="Cristiano Farhat"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -189,7 +179,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- EXEMPLE DE COACH 2 (État "Présent") -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/coachCard2"
                 android:layout_width="match_parent"
@@ -202,7 +191,6 @@
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
-                <!-- Le background est changé dynamiquement en Java/Kotlin -->
                 <LinearLayout
                     android:id="@+id/coachLayout2"
                     android:layout_width="match_parent"
@@ -221,7 +209,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/red_black_and_white_modern_gym_fitness_instagram_post" /> <!-- Mettez une vraie image ici -->
+                            android:src="@drawable/red_black_and_white_modern_gym_fitness_instagram_post" />
                     </androidx.cardview.widget.CardView>
 
                     <LinearLayout
@@ -235,7 +223,7 @@
                             android:id="@+id/coachName2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="georgina teyeb"
+                            android:text="Georgina Teyeb"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -259,8 +247,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
-            <!-- Bouton de validation -->
             <Button
                 android:id="@+id/validateButton"
                 android:layout_width="match_parent"

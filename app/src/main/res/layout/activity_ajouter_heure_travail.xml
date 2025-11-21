@@ -7,13 +7,12 @@
     android:background="#121212"
     tools:context=".AdminWorkingHourActivity">
 
-    <!-- Arrière-plan et superposition -->
     <ImageView
         android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/red_black_and_white_modern_gym_fitness_instagram_post" />
+        android:src="@drawable/bg2" />
 
     <View
         android:id="@+id/overlay"
@@ -21,7 +20,6 @@
         android:layout_height="match_parent"
         android:background="#A0000000" />
 
-    <!-- Barre supérieure -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -34,13 +32,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/backButton"
+            android:id="@+id/menuButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_revert"
+            android:src="@android:drawable/ic_menu_sort_by_size"
             app:tint="#FFFFFF"
-            tools:ignore="ContentDescription" />
+            android:onClick="openDrawer"/>
 
         <TextView
             android:layout_width="0dp"
@@ -52,19 +50,16 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/menuButton"
+        <View
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_sort_by_size"
-            app:tint="#FFFFFF"
-            tools:ignore="ContentDescription" />
+            android:visibility="invisible" />
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBar">
 
@@ -74,396 +69,401 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Section des horaires -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:shadowColor="#000000"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="2"
                 android:text="HORAIRES DE LA SEMAINE"
                 android:textColor="#FF6B35"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardBackgroundColor="#1F1F1F"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                android:background="#1F1F1F"
+                android:orientation="vertical"
+                android:padding="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                    <!-- Lundi -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:text="Lundi"
+                        android:textColor="#E0E0E0"
+                        android:textSize="16sp" />
 
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:text="Lundi"
-                            android:textColor="#E0E0E0"
-                            android:textSize="16sp" />
+                    <EditText
+                        android:id="@+id/editTextStartTimeMonday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Début"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
 
-                        <EditText
-                            android:id="@+id/editTextStartTimeMonday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Début"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:text="-"
-                            android:textColor="#9E9E9E" />
-
-                        <EditText
-                            android:id="@+id/editTextEndTimeMonday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Fin"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="#3A3A3A" />
-
-                    <!-- Répéter ce bloc pour chaque jour... -->
-                    <!-- Mardi -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="-"
+                        android:textColor="#9E9E9E" />
 
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:text="Mardi"
-                            android:textColor="#E0E0E0"
-                            android:textSize="16sp" />
-
-                        <EditText
-                            android:id="@+id/editTextStartTimeTuesday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Début"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:text="-"
-                            android:textColor="#9E9E9E" />
-
-                        <EditText
-                            android:id="@+id/editTextEndTimeTuesday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Fin"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="#3A3A3A" />
-
-                    <!-- Mercredi -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:text="Mercredi"
-                            android:textColor="#E0E0E0"
-                            android:textSize="16sp" />
-                        <EditText
-                            android:id="@+id/editTextStartTimeWednesday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Début"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:text="-"
-                            android:textColor="#9E9E9E" />
-                        <EditText
-                            android:id="@+id/editTextEndTimeWednesday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Fin"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="#3A3A3A" />
-
-                    <!-- Jeudi -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:text="Jeudi"
-                            android:textColor="#E0E0E0"
-                            android:textSize="16sp" />
-                        <EditText
-                            android:id="@+id/editTextStartTimeThursday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Début"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:text="-"
-                            android:textColor="#9E9E9E" />
-                        <EditText
-                            android:id="@+id/editTextEndTimeThursday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Fin"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="#3A3A3A" />
-
-                    <!-- Vendredi -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:text="Vendredi"
-                            android:textColor="#E0E0E0"
-                            android:textSize="16sp" />
-                        <EditText
-                            android:id="@+id/editTextStartTimeFriday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Début"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:text="-"
-                            android:textColor="#9E9E9E" />
-                        <EditText
-                            android:id="@+id/editTextEndTimeFriday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Fin"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="#3A3A3A" />
-
-                    <!-- Samedi -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:text="Samedi"
-                            android:textColor="#E0E0E0"
-                            android:textSize="16sp" />
-                        <EditText
-                            android:id="@+id/editTextStartTimeSaturday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Début"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:text="-"
-                            android:textColor="#9E9E9E" />
-                        <EditText
-                            android:id="@+id/editTextEndTimeSaturday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Fin"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="#3A3A3A" />
-
-                    <!-- Dimanche -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:text="Dimanche"
-                            android:textColor="#E0E0E0"
-                            android:textSize="16sp" />
-                        <EditText
-                            android:id="@+id/editTextStartTimeSunday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Début"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:text="-"
-                            android:textColor="#9E9E9E" />
-                        <EditText
-                            android:id="@+id/editTextEndTimeSunday"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edit_text_background_shape"
-                            android:gravity="center"
-                            android:hint="Fin"
-                            android:inputType="time"
-                            android:textColor="#FFFFFF"
-                            android:textColorHint="#9E9E9E"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
+                    <EditText
+                        android:id="@+id/editTextEndTimeMonday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Fin"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#3A3A3A" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mardi"
+                        android:textColor="#E0E0E0"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editTextStartTimeTuesday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Début"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="-"
+                        android:textColor="#9E9E9E" />
+
+                    <EditText
+                        android:id="@+id/editTextEndTimeTuesday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Fin"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#3A3A3A" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mercredi"
+                        android:textColor="#E0E0E0"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editTextStartTimeWednesday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Début"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="-"
+                        android:textColor="#9E9E9E" />
+
+                    <EditText
+                        android:id="@+id/editTextEndTimeWednesday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Fin"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#3A3A3A" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Jeudi"
+                        android:textColor="#E0E0E0"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editTextStartTimeThursday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Début"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="-"
+                        android:textColor="#9E9E9E" />
+
+                    <EditText
+                        android:id="@+id/editTextEndTimeThursday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Fin"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#3A3A3A" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Vendredi"
+                        android:textColor="#E0E0E0"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editTextStartTimeFriday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Début"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="-"
+                        android:textColor="#9E9E9E" />
+
+                    <EditText
+                        android:id="@+id/editTextEndTimeFriday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Fin"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#3A3A3A" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Samedi"
+                        android:textColor="#E0E0E0"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editTextStartTimeSaturday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Début"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="-"
+                        android:textColor="#9E9E9E" />
+
+                    <EditText
+                        android:id="@+id/editTextEndTimeSaturday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Fin"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#3A3A3A" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Dimanche"
+                        android:textColor="#E0E0E0"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editTextStartTimeSunday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Début"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="-"
+                        android:textColor="#9E9E9E" />
+
+                    <EditText
+                        android:id="@+id/editTextEndTimeSunday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#2D2D2D"
+                        android:gravity="center"
+                        android:hint="Fin"
+                        android:inputType="time"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/saveHoursButton"
@@ -474,127 +474,104 @@
                 android:text="ENREGISTRER LES HORAIRES"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                app:cornerRadius="12dp" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:shadowColor="#000000"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="2"
                 android:text="FERMETURES EXCEPTIONNELLES"
                 android:textColor="#FF6B35"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardBackgroundColor="#2A2A2A"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                android:background="#2A2A2A"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-                <LinearLayout
+                <EditText
+                    android:id="@+id/editTextClosureDate"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:layout_height="50dp"
+                    android:background="#1F1F1F"
+                    android:hint="Date (JJ/MM/AAAA)"
+                    android:inputType="date"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#9E9E9E" />
 
-                    <EditText
-                        android:id="@+id/editTextClosureDate"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@drawable/edit_text_background_shape"
-                        android:hint="Date (JJ/MM/AAAA)"
-                        android:inputType="date"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp"
-                        android:textColor="#FFFFFF"
-                        android:textColorHint="#9E9E9E" />
+                <EditText
+                    android:id="@+id/editTextClosureReason"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#1F1F1F"
+                    android:hint="Raison (ex: Jour Férié)"
+                    android:inputType="text"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#9E9E9E" />
 
-                    <EditText
-                        android:id="@+id/editTextClosureReason"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="12dp"
-                        android:background="@drawable/edit_text_background_shape"
-                        android:hint="Raison (ex: Jour Férié)"
-                        android:inputType="text"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp"
-                        android:textColor="#FFFFFF"
-                        android:textColorHint="#9E9E9E" />
+                <Button
+                    android:id="@+id/addClosureButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="#FF6B35"
+                    android:text="AJOUTER LA FERMETURE"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
 
-                    <Button
-                        android:id="@+id/addClosureButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="20dp"
-                        android:backgroundTint="#FF6B35"
-                        android:text="AJOUTER LA FERMETURE"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"
-                        app:cornerRadius="12dp"/>
+            </LinearLayout>
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Liste des fermetures -->
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="20dp"
-                app:cardBackgroundColor="#1F1F1F"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                android:background="#1F1F1F"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="25/04/2026"
-                            android:textColor="#FFFFFF"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="AID ELKEBIR"
-                            android:textColor="#B0B0B0"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <Button
-                        android:id="@+id/deleteClosureButton"
-                        style="?attr/materialButtonOutlinedStyle"
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:text="DELETE"
-                        android:textColor="#F44336"
-                        android:textSize="12sp"
-                        app:cornerRadius="8dp"
-                        app:strokeColor="#F44336" />
+                        android:layout_height="wrap_content"
+                        android:text="25/04/2026"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="AID ELKEBIR"
+                        android:textColor="#B0B0B0"
+                        android:textSize="12sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/deleteClosureButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#F44336"
+                    android:text="SUPPRIMER"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

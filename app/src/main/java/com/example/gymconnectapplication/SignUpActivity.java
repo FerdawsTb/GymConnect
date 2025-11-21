@@ -23,10 +23,9 @@ public class SignUpActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
     }
-    public void goToClientProfile (View view) {
+    public void goToAdminHome (View view) {
         // Navigation vers activity_client_profile
-        Intent intent = new Intent(this, ClientProfileActivity.class);
+        Intent intent = new Intent(this, AdminHomeActivity.class);
         startActivity(intent);
-
     }
 }

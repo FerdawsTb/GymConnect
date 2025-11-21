@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Section ADMIN - Accès à TOUT -->
+    <group
+        android:id="@+id/group_admin"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_admin_home"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="Accueil Admin" />
+
+        <item
+            android:id="@+id/nav_gerer_abonnements"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="Gérer Abonnements" />
+
+        <item
+            android:id="@+id/nav_gerer_cours"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="Gérer Cours" />
+
+        <item
+            android:id="@+id/nav_gerer_presence"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Gérer Présences Coach" />
+
+        <item
+            android:id="@+id/nav_ajouter_cours"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Ajouter Cours" />
+
+        <item
+            android:id="@+id/nav_ajouter_abonnement"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Ajouter Abonnement" />
+
+        <item
+            android:id="@+id/nav_ajouter_heure"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Ajouter Heure Travail" />
+
+    </group>
+
+    <!-- Section COACH -->
+    <group
+        android:id="@+id/group_coach"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_coach_home"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="Accueil Coach" />
+
+        <item
+            android:id="@+id/nav_mes_cours"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="Mes Cours" />
+    </group>
+
+    <!-- Section CLIENT -->
+    <group
+        android:id="@+id/group_client"
+        android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/nav_reserver_cours"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="Réserver Cours" />
+
+        <item
+            android:id="@+id/nav_client_profile"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Mon Profil" />
+    </group>
+
+    <!-- Section commune à tous -->
+    <item android:title="Autres">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@android:drawable/ic_menu_close_clear_cancel"
+                android:title="Déconnexion" />
+        </menu>
+    </item>
+
+</menu>

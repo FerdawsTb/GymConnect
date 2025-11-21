@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AddSubscriptionTypeActivity">
 
-    <!-- Arrière-plan et superposition (identique à votre style) -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,32 +17,43 @@
         android:layout_height="match_parent"
         android:background="#A6000000" />
 
-    <!-- Titre de la page (identique à votre style) -->
+    <ImageButton
+        android:id="@+id/menuButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Menu"
+        android:src="@android:drawable/ic_menu_sort_by_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#FFFFFF"
+        android:onClick="openDrawer"/>
+
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="12dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="@font/adlam_display"
         android:text="Nouvel Abonnement"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="35sp"
-        android:textStyle="bold|italic"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/menuButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/menuButton"
+        app:layout_constraintTop_toTopOf="@id/menuButton" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintTop_toBottomOf="@id/titleTextView">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,150 +61,168 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <!-- Carte contenant le formulaire -->
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#1F1F1F"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                android:background="#1F1F1F"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:text="Nom de l'abonnement"
+                    android:textColor="#FF6B35"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-                    <!-- Champ : Nom de l'abonnement -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nom de l'abonnement (ex: TRIMESTRIEL)"
-                        android:textColorHint="#B0B0B0"
-                        app:boxStrokeColor="#FF6B35"
-                        app:hintTextColor="#FF6B35">
+                <EditText
+                    android:id="@+id/editTextSubscriptionName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#2D2D2D"
+                    android:hint="Ex: TRIMESTRIEL"
+                    android:inputType="textCapWords"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextSubscriptionName"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textCapWords"
-                            android:textColor="#FFFFFF" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Prix (en DT)"
+                    android:textColor="#FF6B35"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-                    <!-- Champ : Prix de l'abonnement -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:hint="Prix (en DT)"
-                        android:textColorHint="#B0B0B0"
-                        app:boxStrokeColor="#FF6B35"
-                        app:hintTextColor="#FF6B35"
-                        app:startIconTint="#B0B0B0">
+                <EditText
+                    android:id="@+id/editTextPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#2D2D2D"
+                    android:hint="0.00"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextPrice"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="numberDecimal"
-                            android:textColor="#FFFFFF" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Description"
+                    android:textColor="#FF6B35"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-                    <!-- Champ : Description -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:hint="Courte description"
-                        android:textColorHint="#B0B0B0"
-                        app:boxStrokeColor="#FF6B35"
-                        app:hintTextColor="#FF6B35">
+                <EditText
+                    android:id="@+id/editTextDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#2D2D2D"
+                    android:gravity="top|start"
+                    android:hint="Courte description"
+                    android:inputType="textMultiLine"
+                    android:padding="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
+            </LinearLayout>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextDescription"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="top"
-                            android:inputType="textMultiLine"
-                            android:minLines="3"
-                            android:textColor="#FFFFFF" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Carte pour les options supplémentaires -->
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:cardBackgroundColor="#1F1F1F"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                android:background="#1F1F1F"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Options"
+                    android:textColor="#FF6B35"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Options"
-                        android:textColor="#FF6B35"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <!-- Switch : Marquer comme populaire -->
-                    <com.google.android.material.switchmaterial.SwitchMaterial
-                        android:id="@+id/switchPopular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
                         android:text="★ Marquer comme 'Populaire'"
                         android:textColor="#E0E0E0"
                         android:textSize="16sp" />
 
-                    <!-- Switch : Appliquer une réduction -->
-                    <com.google.android.material.switchmaterial.SwitchMaterial
-                        android:id="@+id/switchDiscount"
-                        android:layout_width="match_parent"
+                    <Switch
+                        android:id="@+id/switchPopular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
                         android:text="💎 Appliquer une réduction"
                         android:textColor="#E0E0E0"
                         android:textSize="16sp" />
 
-                    <!-- Champ pour le texte de la réduction (visible si le switch est activé) -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/discountTextInputLayout"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:hint="Texte de la réduction (ex: -10%)"
-                        android:textColorHint="#B0B0B0"
-                        android:visibility="gone"
-                        app:boxStrokeColor="#4CAF50"
-                        app:hintTextColor="#4CAF50"
-                        tools:visibility="visible">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextDiscountText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="text"
-                            android:textColor="#FFFFFF" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
+                    <Switch
+                        android:id="@+id/switchDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <!-- Boutons d'action -->
+                <LinearLayout
+                    android:id="@+id/discountTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Texte de la réduction"
+                        android:textColor="#4CAF50"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTextDiscountText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="#2D2D2D"
+                        android:hint="Ex: -10%"
+                        android:inputType="text"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#808080" />
+                </LinearLayout>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -204,16 +232,14 @@
 
                 <Button
                     android:id="@+id/btnCancel"
-                    style="?attr/materialButtonOutlinedStyle"
                     android:layout_width="0dp"
                     android:layout_height="60dp"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
+                    android:background="#00000000"
                     android:text="Annuler"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    app:cornerRadius="12dp"
-                    app:strokeColor="#B0B0B0" />
+                    android:textColor="#B0B0B0"
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/btnSave"
@@ -225,10 +251,10 @@
                     android:text="Enregistrer"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="12dp" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,4 +12,8 @@ public class AdminGererAbonnementActivity extends AppCompatActivity {
         //EdgeToEdge.enable(this);
         setContentView(R.layout.activity_admin_gerer_abonnement);
     }
+    public void goToAjouterAbonnement(View view) {
+        Intent intent = new Intent(this, AjouterAbonnementActivity.class);
+        startActivity(intent);
+    }
 }

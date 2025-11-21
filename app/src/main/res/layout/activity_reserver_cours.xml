@@ -42,23 +42,30 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/backButton"
+            android:id="@+id/menuButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Back"
-            android:src="@android:drawable/ic_menu_revert"
-            app:tint="#FFFFFF" />
+            android:contentDescription="Menu"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            app:tint="#FFFFFF"
+            android:onClick="openDrawer"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="BOOK A COURSE"
+            android:text="RÉSERVER UN COURS"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:visibility="invisible" />
 
     </LinearLayout>
 
@@ -84,7 +91,7 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="3"
-                android:text="AVAILABLE COURSES"
+                android:text="COURS DISPONIBLES"
                 android:textColor="#FF6B35"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -118,7 +125,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Morning Yoga"
+                                android:text="Yoga Matinal"
                                 android:textColor="#FFFFFF"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -127,7 +134,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="7:00 AM - 8:00 AM"
+                                android:text="7:00 - 8:00"
                                 android:textColor="#2196F3"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -136,7 +143,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Mon • Wed • Fri"
+                                android:text="Lun • Mer • Ven"
                                 android:textColor="#B0B0B0"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -149,7 +156,7 @@
                             android:paddingTop="6dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="6dp"
-                            android:text="Available"
+                            android:text="Disponible"
                             android:textColor="#FFFFFF"
                             android:textSize="11sp"
                             android:textStyle="bold" />
@@ -190,7 +197,7 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="12dp"
                         android:backgroundTint="#2196F3"
-                        android:text="BOOK NOW"
+                        android:text="RÉSERVER"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -226,7 +233,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="CrossFit Intensive"
+                                android:text="CrossFit Intensif"
                                 android:textColor="#FFFFFF"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -235,7 +242,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="6:00 PM - 7:30 PM"
+                                android:text="18:00 - 19:30"
                                 android:textColor="#2196F3"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -244,7 +251,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Tue • Thu • Sat"
+                                android:text="Mar • Jeu • Sam"
                                 android:textColor="#B0B0B0"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -257,7 +264,7 @@
                             android:paddingTop="6dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="6dp"
-                            android:text="Full"
+                            android:text="Complet"
                             android:textColor="#FFFFFF"
                             android:textSize="11sp"
                             android:textStyle="bold" />
@@ -299,7 +306,7 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="12dp"
                         android:backgroundTint="#9E9E9E"
-                        android:text="JOIN WAITLIST"
+                        android:text="LISTE D'ATTENTE"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -335,7 +342,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Spinning Class"
+                                android:text="Cours de Spinning"
                                 android:textColor="#FFFFFF"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -344,7 +351,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="5:30 PM - 6:30 PM"
+                                android:text="17:30 - 18:30"
                                 android:textColor="#2196F3"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -353,7 +360,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Wed • Fri"
+                                android:text="Mer • Ven"
                                 android:textColor="#B0B0B0"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -366,7 +373,7 @@
                             android:paddingTop="6dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="6dp"
-                            android:text="Available"
+                            android:text="Disponible"
                             android:textColor="#FFFFFF"
                             android:textSize="11sp"
                             android:textStyle="bold" />
@@ -407,7 +414,7 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="12dp"
                         android:backgroundTint="#2196F3"
-                        android:text="BOOK NOW"
+                        android:text="RÉSERVER"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -422,7 +429,7 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="3"
-                android:text="MY BOOKINGS"
+                android:text="MES RÉSERVATIONS"
                 android:textColor="#FF6B35"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -457,7 +464,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Morning Yoga"
+                                android:text="Yoga Matinal"
                                 android:textColor="#FFFFFF"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
@@ -466,7 +473,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="📅 Tomorrow - Oct 28"
+                                android:text="📅 Demain - 28 Oct"
                                 android:textColor="#E3F2FD"
                                 android:textSize="13sp" />
 
@@ -474,7 +481,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
-                                android:text="🕐 7:00 AM - 8:00 AM"
+                                android:text="🕐 7:00 - 8:00"
                                 android:textColor="#E3F2FD"
                                 android:textSize="13sp" />
                         </LinearLayout>
@@ -487,20 +494,19 @@
                             android:paddingTop="6dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="6dp"
-                            android:text="Confirmed"
+                            android:text="Confirmé"
                             android:textColor="#FFFFFF"
                             android:textSize="11sp"
                             android:textStyle="bold" />
                     </LinearLayout>
 
-                    <!-- Cancel Button -->
                     <Button
                         android:id="@+id/cancelBookingButton"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginTop="12dp"
                         android:backgroundTint="#FFFFFF"
-                        android:text="CANCEL BOOKING"
+                        android:text="ANNULER LA RÉSERVATION"
                         android:textColor="#F44336"
                         android:textSize="14sp"
                         android:textStyle="bold" />

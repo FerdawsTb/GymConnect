@@ -6,21 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".AddNewCourseActivity">
 
-    <!-- Arrière-plan et superposition (identique à votre style) -->
+    <!-- Image de fond -->
     <ImageView
         android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/red_black_and_white_modern_gym_fitness_instagram_post" />
+        android:src="@drawable/bg2" />
 
+    <!-- Overlay sombre -->
     <View
         android:id="@+id/overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#A6000000" />
 
-    <!-- Barre supérieure (identique à votre style, titre modifié) -->
+    <!-- Barre supérieure -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -33,13 +34,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/backButton"
+            android:id="@+id/menuButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_revert"
+            android:src="@android:drawable/ic_menu_sort_by_size"
             app:tint="#FFFFFF"
-            tools:ignore="ContentDescription" />
+            android:onClick="openDrawer"/>
 
         <TextView
             android:layout_width="0dp"
@@ -51,17 +52,17 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageButton
+        <View
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:visibility="invisible"
-            tools:ignore="ContentDescription" />
+            android:visibility="invisible" />
     </LinearLayout>
 
+    <!-- ScrollView avec le formulaire -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBar">
 
@@ -71,150 +72,241 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <androidx.cardview.widget.CardView
+            <!-- Carte du formulaire -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#2A2A2A"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                android:background="#2A2A2A"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Nom du cours -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nom du cours"
+                    android:textColor="#FF6B35"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/courseNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#1F1F1F"
+                    android:hint="Ex: Yoga"
+                    android:inputType="textCapWords"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
+
+                <!-- Assigner un coach -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Assigner un coach"
+                    android:textColor="#FF6B35"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/coachSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#1F1F1F"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:spinnerMode="dropdown" />
+
+                <!-- Jours du cours -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Jours du cours"
+                    android:textColor="#E0E0E0"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/daysChipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkLundi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lun"
+                        android:textColor="#E0E0E0" />
+
+                    <CheckBox
+                        android:id="@+id/checkMardi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mar"
+                        android:textColor="#E0E0E0" />
+
+                    <CheckBox
+                        android:id="@+id/checkMercredi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mer"
+                        android:textColor="#E0E0E0" />
+
+                    <CheckBox
+                        android:id="@+id/checkJeudi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jeu"
+                        android:textColor="#E0E0E0" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:orientation="horizontal">
 
-                    <!-- Champ : Nom du cours -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nom du cours"
-                        android:textColorHint="#B0B0B0"
-                        app:boxStrokeColor="#FF6B35"
-                        app:hintTextColor="#FF6B35">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/courseNameEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textCapWords"
-                            android:textColor="#FFFFFF" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <!-- Champ : Assignation du coach (Spinner/Dropdown) -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:hint="Assigner un coach"
-                        android:textColorHint="#B0B0B0"
-                        app:boxStrokeColor="#FF6B35"
-                        app:hintTextColor="#FF6B35">
-                        <AutoCompleteTextView
-                            android:id="@+id/coachAutoCompleteTextView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="none"
-                            android:textColor="#FFFFFF"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <!-- Sélection des jours -->
-                    <TextView
+                    <CheckBox
+                        android:id="@+id/checkVendredi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="Jours du cours"
-                        android:textColor="#E0E0E0"
-                        android:textSize="16sp"/>
-                    <com.google.android.material.chip.ChipGroup
-                        android:id="@+id/daysChipGroup"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        app:chipSpacingHorizontal="6dp">
-                        <com.google.android.material.chip.Chip style="@style/Widget.MaterialComponents.Chip.Filter" android:text="Lundi"/>
-                        <com.google.android.material.chip.Chip style="@style/Widget.MaterialComponents.Chip.Filter" android:text="Mardi"/>
-                        <com.google.android.material.chip.Chip style="@style/Widget.MaterialComponents.Chip.Filter" android:text="Mercredi"/>
-                        <com.google.android.material.chip.Chip style="@style/Widget.MaterialComponents.Chip.Filter" android:text="Jeudi"/>
-                        <com.google.android.material.chip.Chip style="@style/Widget.MaterialComponents.Chip.Filter" android:text="Vendredi"/>
-                        <com.google.android.material.chip.Chip style="@style/Widget.MaterialComponents.Chip.Filter" android:text="Samedi"/>
-                        <com.google.android.material.chip.Chip style="@style/Widget.MaterialComponents.Chip.Filter" android:text="Dimanche"/>
-                    </com.google.android.material.chip.ChipGroup>
+                        android:text="Ven"
+                        android:textColor="#E0E0E0" />
 
-                    <!-- Heures et Participants -->
+                    <CheckBox
+                        android:id="@+id/checkSamedi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sam"
+                        android:textColor="#E0E0E0" />
+
+                    <CheckBox
+                        android:id="@+id/checkDimanche"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dim"
+                        android:textColor="#E0E0E0" />
+                </LinearLayout>
+
+                <!-- Heures -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:orientation="horizontal">
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
+                        <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:hint="Début (HH:mm)"
-                            android:textColorHint="#B0B0B0"
-                            app:boxStrokeColor="#2196F3"
-                            app:hintTextColor="#2196F3">
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/startTimeEditText"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="time"
-                                android:textColor="#FFFFFF"/>
-                        </com.google.android.material.textfield.TextInputLayout>
+                            android:text="Début (HH:mm)"
+                            android:textColor="#2196F3"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:hint="Fin (HH:mm)"
-                            android:textColorHint="#B0B0B0"
-                            app:boxStrokeColor="#2196F3"
-                            app:hintTextColor="#2196F3">
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/endTimeEditText"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="time"
-                                android:textColor="#FFFFFF"/>
-                        </com.google.android.material.textfield.TextInputLayout>
+                        <EditText
+                            android:id="@+id/startTimeEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:background="#1F1F1F"
+                            android:hint="08:00"
+                            android:inputType="time"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#808080" />
                     </LinearLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:hint="Participants maximum"
-                        android:textColorHint="#B0B0B0"
-                        app:boxStrokeColor="#FF6B35"
-                        app:hintTextColor="#FF6B35">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/maxParticipantsEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:textColor="#FFFFFF" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                    <!-- Statut du cours -->
-                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fin (HH:mm)"
+                            android:textColor="#2196F3"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/endTimeEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:background="#1F1F1F"
+                            android:hint="09:00"
+                            android:inputType="time"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#808080" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Participants maximum -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Participants maximum"
+                    android:textColor="#FF6B35"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/maxParticipantsEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#1F1F1F"
+                    android:hint="20"
+                    android:inputType="number"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
+
+                <!-- Statut du cours -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Activer le cours"
+                        android:textColor="#E0E0E0"
+                        android:textSize="16sp" />
+
+                    <Switch
                         android:id="@+id/statusSwitch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="Activer le cours"
-                        android:checked="true"
-                        android:textColor="#E0E0E0"
-                        android:textSize="16sp"/>
+                        android:checked="true" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
             <!-- Boutons d'action -->
             <LinearLayout
@@ -226,16 +318,14 @@
 
                 <Button
                     android:id="@+id/cancelButton"
-                    style="?attr/materialButtonOutlinedStyle"
                     android:layout_width="0dp"
                     android:layout_height="60dp"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
+                    android:background="#00000000"
                     android:text="ANNULER"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    app:cornerRadius="12dp"
-                    app:strokeColor="#B0B0B0" />
+                    android:textColor="#B0B0B0"
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/saveButton"
@@ -247,8 +337,7 @@
                     android:text="ENREGISTRER"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="12dp" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>

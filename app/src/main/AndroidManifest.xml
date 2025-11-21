@@ -45,7 +45,7 @@
             android:name=".GererPresenceCoachActivity"
             android:exported="false" />
         <activity
-            android:name=".ReserverCoursAvtivity"
+            android:name=".ReserverCoursActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"

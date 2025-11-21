@@ -169,7 +169,7 @@
                         android:textStyle="bold"
                         app:cornerRadius="16dp"
                         android:elevation="8dp"
-                        android:onClick="goToClientProfile" />
+                        android:onClick="goToAdminHome"/>
 
                 </LinearLayout>
 
