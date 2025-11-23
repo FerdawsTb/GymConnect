@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <!-- Dark overlay simple -->
+    <!-- Dark overlay -->
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -287,19 +287,14 @@
                         android:layout_marginTop="12dp"
                         android:hint="Password"
                         app:boxBackgroundColor="#FFFFFF"
-                        app:boxCornerRadiusBottomEnd="12dp"
-                        app:boxCornerRadiusBottomStart="12dp"
-                        app:boxCornerRadiusTopEnd="12dp"
-                        app:boxCornerRadiusTopStart="12dp"
                         app:boxStrokeColor="#2196F3"
                         app:endIconMode="password_toggle"
                         app:errorEnabled="true"
-                        app:helperText="Min. 8 characters"
                         app:helperTextTextColor="@color/orange"
                         app:hintTextColor="#2196F3"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tilGender"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tilGender">
+                        app:layout_constraintEnd_toEndOf="parent">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etPassword"
@@ -321,13 +316,9 @@
                         android:hint="Confirm Password"
                         app:boxBackgroundColor="#FFFFFF"
                         app:boxStrokeColor="#2196F3"
-                        app:boxCornerRadiusTopStart="12dp"
-                        app:boxCornerRadiusTopEnd="12dp"
-                        app:boxCornerRadiusBottomStart="12dp"
-                        app:boxCornerRadiusBottomEnd="12dp"
-                        app:hintTextColor="#2196F3"
                         app:endIconMode="password_toggle"
                         app:errorEnabled="true"
+                        app:hintTextColor="#2196F3"
                         app:layout_constraintTop_toBottomOf="@id/tilPassword"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent">
@@ -348,7 +339,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="I agree to the Terms &amp; Conditions"
+                        android:text="I agree to the Terms and Conditions"
                         android:textColor="#FFFFFF"
                         android:textSize="13sp"
                         app:layout_constraintTop_toBottomOf="@id/tilConfirmPassword"
@@ -375,8 +366,7 @@
                 app:layout_constraintTop_toBottomOf="@id/cardForm"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:onClick="goToAdminHome"/>
-
+                android:onClick="onSignUpClick"/>
 
             <!-- Already have account -->
             <LinearLayout

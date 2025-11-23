@@ -284,51 +284,6 @@
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
-            <!-- NOUVEAU: Section Galerie Photo -->
-            <LinearLayout
-                android:id="@+id/gallerySection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    android:shadowColor="#000000"
-                    android:shadowDx="1"
-                    android:shadowDy="1"
-                    android:shadowRadius="2"
-                    android:text="NOTRE SALLE"
-                    android:textColor="#FF6B35"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:scrollbars="none">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingStart="24dp"
-                        android:paddingEnd="24dp">
-
-                        <androidx.cardview.widget.CardView style="@style/GalleryCard">
-                            <ImageView style="@style/GalleryImage" android:src="@drawable/gym_background"/>
-                        </androidx.cardview.widget.CardView>
-                        <androidx.cardview.widget.CardView style="@style/GalleryCard">
-                            <ImageView style="@style/GalleryImage" android:src="@drawable/bg2"/>
-                        </androidx.cardview.widget.CardView>
-                        <androidx.cardview.widget.CardView style="@style/GalleryCard">
-                            <ImageView style="@style/GalleryImage" android:src="@drawable/red_black_and_white_modern_gym_fitness_instagram_post"/>
-                        </androidx.cardview.widget.CardView>
-
-                    </LinearLayout>
-                </HorizontalScrollView>
-            </LinearLayout>
 
             <!-- Section Horaires d'ouverture -->
             <LinearLayout
@@ -388,10 +343,12 @@
         android:id="@+id/buttonsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:background="#1F1F1F"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -401,7 +358,7 @@
             android:text="Prêt à commencer ? Rejoignez-nous !"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -415,12 +372,12 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFFFFF"
+                android:onClick="goToSignIn"
                 android:text="@string/signin"
                 android:textColor="#2196F3"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:cornerRadius="12dp"
-                android:onClick="goToSignIn" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/signUpButton"
@@ -429,12 +386,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="#2196F3"
+                android:onClick="goToSignUp"
                 android:text="@string/signup"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:cornerRadius="12dp"
-                android:onClick="goToSignUp" />
+                app:cornerRadius="12dp" />
         </LinearLayout>
     </LinearLayout>
 

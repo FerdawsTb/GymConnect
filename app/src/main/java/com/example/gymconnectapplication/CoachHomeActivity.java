@@ -1,6 +1,7 @@
 package com.example.gymconnectapplication;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,4 +12,5 @@ public class CoachHomeActivity extends AppCompatActivity {
         //EdgeToEdge.enable(this);
         setContentView(R.layout.activity_coach_home);
     }
+
 }

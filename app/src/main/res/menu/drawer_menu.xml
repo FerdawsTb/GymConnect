@@ -31,10 +31,6 @@
             android:icon="@android:drawable/ic_menu_add"
             android:title="Ajouter Cours" />
 
-        <item
-            android:id="@+id/nav_ajouter_abonnement"
-            android:icon="@android:drawable/ic_menu_add"
-            android:title="Ajouter Abonnement" />
 
         <item
             android:id="@+id/nav_ajouter_heure"
@@ -53,10 +49,6 @@
             android:icon="@android:drawable/ic_menu_compass"
             android:title="Accueil Coach" />
 
-        <item
-            android:id="@+id/nav_mes_cours"
-            android:icon="@android:drawable/ic_menu_today"
-            android:title="Mes Cours" />
     </group>
 
     <!-- Section CLIENT -->
