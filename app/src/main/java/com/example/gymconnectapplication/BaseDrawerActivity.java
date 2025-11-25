@@ -26,7 +26,6 @@ public abstract class BaseDrawerActivity extends AppCompatActivity {
                 if (drawerLayout != null && drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                 } else {
-                    // Comportement par défaut
                     setEnabled(false);
                     getOnBackPressedDispatcher().onBackPressed();
                 }
@@ -34,7 +33,6 @@ public abstract class BaseDrawerActivity extends AppCompatActivity {
         });
     }
 
-    // Appelez cette méthode après setContentView dans chaque Activity
     protected void setupDrawer() {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -50,7 +48,7 @@ public abstract class BaseDrawerActivity extends AppCompatActivity {
         }
     }
 
-    // Méthode pour ouvrir le menu (appelée depuis le XML avec android:onClick)
+
     public void openDrawer(View view) {
         if (drawerLayout != null) {
             drawerLayout.openDrawer(GravityCompat.START);

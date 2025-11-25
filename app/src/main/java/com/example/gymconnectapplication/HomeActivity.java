@@ -19,7 +19,6 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // Navigation vers LoginActivity (ou SignUpActivity si vous la créez)
     public void goToSignUp(View view) {
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);

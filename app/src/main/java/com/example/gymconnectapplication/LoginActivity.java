@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
     }
 
-    // 🔥 Une seule méthode pour le bouton !
     public void onSignInClick(View view) {
 
         if (!validateForm()) {
@@ -48,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                 break;
         }
 
-        // Optionnel : envoyer le rôle
+
         intent.putExtra("USER_ROLE", userRole);
 
         startActivity(intent);
