@@ -86,4 +86,8 @@ public class LoginActivity extends AppCompatActivity {
     public void goToSignUp(View view) {
         startActivity(new Intent(this, SignUpActivity.class));
     }
+
+    public void onForgotPasswordClick(View view) {
+        startActivity(new Intent(this, ForgotPasswordActivity.class));
+    }
 }
