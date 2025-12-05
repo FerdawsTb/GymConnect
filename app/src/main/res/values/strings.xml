@@ -15,6 +15,7 @@
         <item>Femme</item>
         <item>Autre</item>
         <item>Préfère ne pas dire</item>
+
     </string-array>
 
         <string name="navigation_drawer_open">Ouvrir le menu</string>

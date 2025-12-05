@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- 1. AJOUTER LA PERMISSION INTERNET ICI -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,6 +13,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
+        android:usesCleartextTraffic="true"
+
         android:theme="@style/Theme.GymConnectApplication">
         <activity
             android:name=".SignUpActivity"
@@ -41,6 +47,10 @@
         <activity
             android:name=".GererCoursActivity"
             android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false">
+        </activity>
         <activity
             android:name=".GererPresenceCoachActivity"
             android:exported="false" />

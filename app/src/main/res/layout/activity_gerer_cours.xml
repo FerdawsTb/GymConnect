@@ -555,15 +555,13 @@
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-<com.google.android.material.navigation.NavigationView
-android:id="@+id/nav_view"
-android:layout_width="280dp"
-android:layout_height="match_parent"
-android:layout_gravity="start"
-android:background="#1F1F1F"
-android:fitsSystemWindows="true"
-app:itemIconTint="#FFFFFF"
-app:itemTextColor="#FFFFFF"
-app:menu="@menu/drawer_menu" />
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/nav_header" />
 
-    </androidx.drawerlayout.widget.DrawerLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
