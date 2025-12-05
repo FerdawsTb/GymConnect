@@ -36,10 +36,6 @@ public abstract class BaseDrawerActivity extends AppCompatActivity {
         });
     }
 
-<<<<<<< HEAD
-=======
-    // Méthode à appeler dans le onCreate des enfants
->>>>>>> 6f5ae1d ( liaison avec BD)
     protected void setupDrawer() {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -55,11 +51,7 @@ public abstract class BaseDrawerActivity extends AppCompatActivity {
         }
     }
 
-<<<<<<< HEAD
 
-=======
-    // Appelée par le bouton XML (android:onClick="openDrawer")
->>>>>>> 6f5ae1d ( liaison avec BD)
     public void openDrawer(View view) {
         if (drawerLayout != null) {
             drawerLayout.openDrawer(GravityCompat.START);

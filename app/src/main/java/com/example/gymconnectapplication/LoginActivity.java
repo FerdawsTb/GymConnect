@@ -39,37 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
     }
 
-<<<<<<< HEAD
-    public void onSignInClick(View view) {
-
-        if (!validateForm()) {
-            return; // Stop si les champs ne sont pas valides
-        }
-
-        String userRole = "ADMIN"; // "COACH" ou "CLIENT"
-
-        Intent intent;
-
-        switch (userRole) {
-            case "ADMIN":
-                intent = new Intent(this, AdminHomeActivity.class);
-                break;
-            case "COACH":
-                intent = new Intent(this, CoachHomeActivity.class);
-                break;
-            default:
-                intent = new Intent(this, HomeActivity.class);
-                break;
-        }
-
-
-        intent.putExtra("USER_ROLE", userRole);
-
-        startActivity(intent);
-=======
     public void goToPasswordForgot(View view) {
         startActivity(new Intent(this, ForgotPasswordActivity.class));
->>>>>>> 6f5ae1d ( liaison avec BD)
         finish();
     }
 
